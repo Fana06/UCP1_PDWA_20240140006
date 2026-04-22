@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran</title>
+</head>
+    <h1>Pendaftaran</h1>
+     <p>Silakan isi formulir di bawah ini untuk mendaftar:</p>
+<body>
+    <form action="submit_pendaftaran.html" method="post">
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="minat">Bidang Minat:</label><br>
+        <select id="minat" name="minat" required>
+            <option value="">Pilih minat Anda</option>
+            <option value="web">Pengembangan Web</option>
+            <option value="mobile">Pengembangan Mobile</option>
+            <option value="data">Data Science</option>
+            <option value="ai">Kecerdasan Buatan</option>
+        </select><br><br>
+        <input type="submit" value="Daftar">
+    </form>
+    
+</body>
+</html>

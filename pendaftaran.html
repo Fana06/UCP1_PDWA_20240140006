@@ -1,29 +1,108 @@
 <!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran — Tech Community</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-    <h1>Pendaftaran</h1>
-     <p>Silakan isi formulir di bawah ini untuk mendaftar:</p>
 <body>
-    <form action="submit_pendaftaran.html" method="post">
-        <label for="nama">Nama:</label><br>
-        <input type="text" id="nama" name="nama" required><br><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="minat">Bidang Minat:</label><br>
+
+
+  <nav class="navbar">
+    <a href="./beranda.html" class="brand">Tech Community</a>
+    <a href="./beranda.html">Beranda</a>
+    <a href="./pendaftaran.html" class="active">Pendaftaran</a>
+    <a href="./dokumentasi.html">Dokumentasi</a>
+  </nav>
+
+
+  <div class="page-header">
+    <h1>Pendaftaran</h1>
+    <p>Silakan isi formulir di bawah ini untuk mendaftar:</p>
+  </div>
+
+
+  <div class="card">
+    <h3>Formulir Pendaftaran Anggota</h3>
+
+    <form id="form-pendaftaran" action="submit_pendaftaran.html" method="post" onsubmit="submitForm(event)">
+
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="minat">Bidang Minat:</label>
         <select id="minat" name="minat" required>
-            <option value="">Pilih minat Anda</option>
-            <option value="web">Pengembangan Web</option>
-            <option value="mobile">Pengembangan Mobile</option>
-            <option value="data">Data Science</option>
-            <option value="ai">Kecerdasan Buatan</option>
-        </select><br><br>
-        <input type="submit" value="Daftar">
+          <option value="">Pilih minat Anda</option>
+          <option value="web">Pengembangan Web</option>
+          <option value="mobile">Pengembangan Mobile</option>
+          <option value="data">Data Science</option>
+          <option value="ai">Kecerdasan Buatan</option>
+        </select>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <input type="submit" class="btn" value="Daftar">
+        <a href="./beranda.html" class="btn btn-outline">Kembali ke Beranda</a>
+      </div>
+
     </form>
-    
+
+
+    <div id="form-result"></div>
+  </div>
+
+  <footer>&copy; 2025 Tech Community</footer>
+
+  <script>
+    const daftarAnggota = [];
+
+    const labelMinat = {
+      web:    "Pengembangan Web",
+      mobile: "Pengembangan Mobile",
+      data:   "Data Science",
+      ai:     "Kecerdasan Buatan"
+    };
+
+    function submitForm(event) {
+      event.preventDefault();
+
+      const nama  = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const minat = document.getElementById("minat").value;
+
+      const anggotaBaru = { nama, email, minat: labelMinat[minat] };
+      daftarAnggota.push(anggotaBaru);
+
+      const result = document.getElementById("form-result");
+      result.classList.add("show");
+      result.innerHTML = `
+        ✅ <strong>Pendaftaran berhasil!</strong><br>
+        Nama&nbsp;&nbsp;&nbsp;: ${anggotaBaru.nama}<br>
+        Email&nbsp;&nbsp;: ${anggotaBaru.email}<br>
+        Minat&nbsp;&nbsp;: ${anggotaBaru.minat}
+      `;
+
+      alert(
+        "Pendaftaran Berhasil!\n\n" +
+        "Nama   : " + anggotaBaru.nama + "\n" +
+        "Email  : " + anggotaBaru.email + "\n" +
+        "Minat  : " + anggotaBaru.minat
+      );
+
+      document.getElementById("form-pendaftaran").reset();
+
+      console.log("Data anggota saat ini:", daftarAnggota);
+    }
+  </script>
+
 </body>
 </html>

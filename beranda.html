@@ -58,7 +58,35 @@
      </div>
      </div>
 
-            <footer>&copy; 2025 Tech Community</footer>
-        </table>
+    <footer>&copy; 2025 Tech Community</footer>
+        
+    <script>
+    const dataAnggota = [
+      { nama: "Faza", email: "faza@mail.com", minat: "Pengembangan Web" }
+    ];
+
+    function renderTabel() {
+      const tbody = document.getElementById("tabel-anggota");
+      tbody.innerHTML = "";
+
+      if (dataAnggota.length === 0) {
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="3">Belum ada anggota terdaftar.</td></tr>`;
+        return;
+      }
+
+      dataAnggota.forEach(function(anggota) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${anggota.nama}</td>
+          <td>${anggota.email}</td>
+          <td>${anggota.minat}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    renderTabel();
+  </script>
+    
     </body>
 </html>

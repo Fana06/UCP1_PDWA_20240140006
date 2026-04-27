@@ -290,3 +290,13 @@ table tbody tr.empty-row td {
   gap: 10px;
   margin-top: 12px;
 }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+}

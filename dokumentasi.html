@@ -1,33 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokumentasi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi — Tech Community</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+
+  <nav class="navbar">
+    <a href="./beranda.html" class="brand">Tech Community</a>
+    <a href="./beranda.html">Beranda</a>
+    <a href="./pendaftaran.html">Pendaftaran</a>
+    <a href="./dokumentasi.html" class="active">Dokumentasi</a>
+  </nav>
+
+
+  <div class="page-header">
     <h1>Dokumentasi Umum</h1>
     <p>Ini adalah halaman dokumentasi umum untuk komunitas kami.</p>
-</body>
-    <div>
-        <picture>
+  </div>
+
+
+  <div class="card">
+    <h3>Gambar</h3>
+    <p class="media-label">Klik tombol untuk mengganti gambar</p>
+    <div class="media-block">
+      <picture>
         <source srcset="gambar1.webp" type="image/webp">
         <source srcset="gambar1.jpg" type="image/jpeg">
-        <img src="gambar1.jpg" alt="Gambar Dokumentasi" style="width:100%;">
-        </picture>
+        <img id="gambar-utama" src="gambar1.jpg" alt="Gambar Dokumentasi">
+      </picture>
     </div>
-    
-    <div>
-        <video controls>
+    <div class="img-controls">
+      <button class="btn btn-sm" onclick="gantiGambar('gambar1.jpg', 'Gambar 1')">Gambar 1</button>
+      <button class="btn btn-sm btn-outline" onclick="gantiGambar('gambar2.jpg', 'Gambar 2')">Gambar 2</button>
+      <button class="btn btn-sm btn-outline" onclick="infoGambar()">Info Gambar</button>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h3>Video</h3>
+    <div class="media-block">
+      <video id="video-utama" controls>
         <source src="video1.mp4" type="video/mp4">
         <source src="video1.webm" type="video/webm">
         Browser Anda tidak mendukung tag video.
+      </video>
     </div>
+  </div>
 
-    <div>
-        <audio controls>
+
+  <div class="card">
+    <h3>Audio</h3>
+    <div class="media-block">
+      <audio id="audio-utama">
         <source src="audio1.mp3" type="audio/mpeg">
         <source src="audio1.ogg" type="audio/ogg">
         Browser Anda tidak mendukung tag audio.
+      </audio>
     </div>
+
+    <div class="audio-controls">
+      <button class="btn btn-sm" id="btn-play" onclick="putarAudio()">▶ Putar</button>
+      <button class="btn btn-sm btn-outline" id="btn-stop" onclick="hentikanAudio()">⏹ Hentikan</button>
+      <span class="audio-status" id="audio-status">— Belum diputar</span>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Tech Community</footer>
+
+  <script>
+    const audio = document.getElementById("audio-utama");
+    const status = document.getElementById("audio-status");
+
+    function putarAudio() {
+      audio.play();
+      status.textContent = "▶ Sedang diputar...";
+    }
+
+    function hentikanAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+      status.textContent = "⏹ Dihentikan";
+    }
+
+    audio.addEventListener("ended", function () {
+      status.textContent = "✔ Selesai";
+    });
+
+    let gambarAktif = "gambar1.jpg";
+
+    function gantiGambar(src, label) {
+      const img = document.getElementById("gambar-utama");
+      img.src = src;
+      img.alt = label;
+      gambarAktif = src;
+
+    
+      document.querySelectorAll(".img-controls .btn").forEach(function(btn) {
+        btn.classList.add("btn-outline");
+        btn.classList.remove("btn");
+      });
+    }
+
+    function infoGambar() {
+      alert("Gambar aktif saat ini: " + gambarAktif);
+    }
+  </script>
+
+</body>
 </html>

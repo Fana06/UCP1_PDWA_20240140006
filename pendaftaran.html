@@ -82,6 +82,10 @@
       const anggotaBaru = { nama, email, minat: labelMinat[minat] };
       daftarAnggota.push(anggotaBaru);
 
+      const dataSimpan = JSON.parse(localStorage.getItem("daftarAnggota") || "[]");
+      dataSimpan.push(anggotaBaru);
+      localStorage.setItem("daftarAnggota", JSON.stringify(dataSimpan));
+
       const result = document.getElementById("form-result");
       result.classList.add("show");
       result.innerHTML = `

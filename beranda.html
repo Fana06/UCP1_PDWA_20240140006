@@ -66,24 +66,27 @@
     ];
 
     function renderTabel() {
-      const tbody = document.getElementById("tabel-anggota");
-      tbody.innerHTML = "";
+    const tbody = document.getElementById("tabel-anggota");
+    tbody.innerHTML = "";
 
-      if (dataAnggota.length === 0) {
-        tbody.innerHTML = `<tr class="empty-row"><td colspan="3">Belum ada anggota terdaftar.</td></tr>`;
-        return;
-      }
+    const dataTersimpan = JSON.parse(localStorage.getItem("daftarAnggota") || "[]");
+    const semuaData = [...dataAnggota, ...dataTersimpan];
 
-      dataAnggota.forEach(function(anggota) {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${anggota.nama}</td>
-          <td>${anggota.email}</td>
-          <td>${anggota.minat}</td>
-        `;
-        tbody.appendChild(row);
-      });
+    if (semuaData.length === 0) {
+    tbody.innerHTML = `<tr class="empty-row"><td colspan="3">Belum ada anggota terdaftar.</td></tr>`;
+    return;
     }
+
+  semuaData.forEach(function(anggota) {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${anggota.nama}</td>
+      <td>${anggota.email}</td>
+      <td>${anggota.minat}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
 
     renderTabel();
   </script>

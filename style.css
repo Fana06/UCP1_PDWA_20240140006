@@ -114,3 +114,13 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
 }
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}

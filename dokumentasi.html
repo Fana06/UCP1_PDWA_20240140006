@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
   <nav class="navbar">
     <a href="./beranda.html" class="brand">Tech Community</a>
     <a href="./beranda.html">Beranda</a>
@@ -16,22 +15,16 @@
     <a href="./dokumentasi.html" class="active">Dokumentasi</a>
   </nav>
 
-
   <div class="page-header">
     <h1>Dokumentasi Umum</h1>
     <p>Ini adalah halaman dokumentasi umum untuk komunitas kami.</p>
   </div>
 
-
   <div class="card">
     <h3>Gambar</h3>
     <p class="media-label">Klik tombol untuk mengganti gambar</p>
     <div class="media-block">
-      <picture>
-        <source srcset="gambar1.jpg" type="image/jpeg">
-        <img id="gambar-utama" src="gambar1.jpg" alt="Gambar Dokumentasi">
-        <source srcset="gambar2.jpg" type="image/jpeg">
-      </picture>
+      <img id="gambar-utama" src="gambar1.jpg" alt="Gambar 1">
     </div>
     <div class="img-controls">
       <button class="btn btn-sm" onclick="gantiGambar('gambar1.jpg', 'Gambar 1')">Gambar 1</button>
@@ -39,7 +32,6 @@
       <button class="btn btn-sm btn-outline" onclick="infoGambar()">Info Gambar</button>
     </div>
   </div>
-
 
   <div class="card">
     <h3>Video</h3>
@@ -52,7 +44,6 @@
     </div>
   </div>
 
-
   <div class="card">
     <h3>Audio</h3>
     <div class="media-block">
@@ -62,7 +53,6 @@
         Browser Anda tidak mendukung tag audio.
       </audio>
     </div>
-
     <div class="audio-controls">
       <button class="btn btn-sm" id="btn-play" onclick="putarAudio()">▶ Putar</button>
       <button class="btn btn-sm btn-outline" id="btn-stop" onclick="hentikanAudio()">⏹ Hentikan</button>
@@ -99,11 +89,12 @@
       img.alt = label;
       gambarAktif = src;
 
-    
-      document.querySelectorAll(".img-controls .btn").forEach(function(btn) {
-        btn.classList.add("btn-outline");
+      document.querySelectorAll(".img-controls button").forEach(function(btn) {
         btn.classList.remove("btn");
+        btn.classList.add("btn-outline");
       });
+      event.target.classList.remove("btn-outline");
+      event.target.classList.add("btn");
     }
 
     function infoGambar() {

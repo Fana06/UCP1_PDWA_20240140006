@@ -29,3 +29,9 @@ html {
   background: var(--bg);
   line-height: 1.6;
 }
+
+body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}

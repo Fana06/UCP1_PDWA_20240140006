@@ -189,3 +189,50 @@ table tbody tr.empty-row td {
   font-style: italic;
   padding: 24px;
 }
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--primary);
+  background: var(--bg);
+  transition: border-color 0.15s, background 0.15s;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+#form-result {
+  display: none;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--success);
+  line-height: 1.7;
+}
+
+#form-result.show { display: block; }

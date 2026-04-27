@@ -1,12 +1,12 @@
 # Tech Community Website
-### UCP 1 — Praktikum Pengembangan Desain Web
+### UCP 1 - Praktikum Pengembangan Desain Web
 ---
 
 //Identitas//
 
 | **Nama** | Aquilla Faza Naufan |
 | **NIM** | 20240140006 |
-| **Kelas** | Kelas A |
+| **Kelas A** |
 | **Mata Kuliah** | Praktikum Pengembangan Desain Web |
 | **Tugas** | UCP 1 |
 | **Tahun** | 2025/2026 |

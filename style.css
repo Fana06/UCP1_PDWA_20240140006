@@ -5,3 +5,27 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --bg:         #f0f2f5;
+  --surface:    #ffffff;
+  --primary:    #111827;
+  --accent:     #2563eb;
+  --accent-dk:  #1d4ed8;
+  --accent-lt:  #eff6ff;
+  --success:    #16a34a;
+  --muted:      #6b7280;
+  --border:     #e5e7eb;
+  --radius:     10px;
+  --shadow:     0 1px 4px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.06);
+  --font-mono:  'IBM Plex Mono', monospace;
+  --font-body:  'Inter', sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--primary);
+  background: var(--bg);
+  line-height: 1.6;
+}

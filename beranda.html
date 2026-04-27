@@ -1,43 +1,64 @@
 <!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Community</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Community</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
-     <h1>Tech Community</h1>
-     <p>Selamat datang di komunitas kami!</p>
 <body>
-    <h3>Kenapa Bergabung dengan Kami?</h3>
-     <ul>
-         <li>Belajar dan berbagi pengetahuan tentang teknologi terbaru.</li>
-         <li>Berinteraksi dengan para profesional di bidang teknologi.</li>
-         <li>Mendapatkan akses ke sumber daya eksklusif dan acara komunitas.</li>
-     </ul>
-</body>
-    <h3>Bagaimana Cara Bergabung?</h3>
-     <p>Untuk bergabung dengan komunitas kami, silakan klik tombol di bawah ini untuk mendaftar:</p>
-     <ul>
-         <a href="pendaftaran.html">Daftar Sekarang</a>
-     </ul>
+    <nav class="navbar">
+        <a href="./beranda.html" class="brand">Tech Community</a>
+        <a href="./beranda.html" class="active">Beranda</a>
+        <a href="./pendaftaran.html">Pendaftaran</a>
+        <a href="./dokumentasi.html">Dokumentasi</a>
+    </nav>
 
-     <h3>Dokumentasi</h3>
-     <p>Anda dapat menemukan dokumentasi lengkap tentang komunitas kami di bawah ini:</p>
-     <ul>
-         <a href="dokumentasi.html">Dokumentasi Umum</a>
-     </ul>
+    <div class="page-header">
+        <h1>Tech Community</h1>
+        <p>Selamat datang di komunitas kami!</p>
+    </div>
 
-     <h3>Daftar Anggota</h3>
-        <table border="1">
+    <div class="card">
+        <h3>Kenapa Bergabung dengan Kami?</h3>
+        <ul>
+            <li>Belajar dan berbagi pengetahuan tentang teknologi terbaru.</li>
+            <li>Berinteraksi dengan para profesional di bidang teknologi.</li>
+            <li>Mendapatkan akses ke sumber daya eksklusif dan acara komunitas.</li>
+        </ul>
+    </div>
+
+
+    <div class="card">
+        <h3>Bagaimana Cara Bergabung?</h3>
+        <p style="color:var(--muted); margin-bottom:16px;">Untuk bergabung dengan komunitas kami, silakan klik tombol di bawah ini untuk mendaftar:</p>
+        <a href="./pendaftaran.html" class="btn">Daftar Sekarang</a>
+    </div>
+
+    <div class="card">
+        <h3>Dokumentasi</h3>
+        <p style="color:var(--muted); margin-bottom:16px;">Anda dapat menemukan dokumentasi lengkap tentang komunitas kami di bawah ini:</p>
+        <a href="./dokumentasi.html" class="btn btn-outline">Dokumentasi Umum</a>
+    </div>
+
+     <div class="card">
+    <h3>Daftar Anggota</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
             <tr>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>Bidang Minat</th>
             </tr>
-            <tr>
-                <td>Faza</td>
-                <td>faza@mail.com</td>
-                <td>Pengembangan Web</td>
-            </tr>
+            </thead>
+            <tbody id="tabel-anggota">
+            </tbody>
+        </table>
+     </div>
+     </div>
+
+            <footer>&copy; 2025 Tech Community</footer>
         </table>
     </body>
 </html>
